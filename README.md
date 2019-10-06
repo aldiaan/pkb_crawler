@@ -11,6 +11,7 @@
 
 ## Pemakaian
 ### Level 1
+pkb_crawler berada di `./project_pkb/pkb_crawler`
 list parameter yang tersedia yang dapat dilihat dengan command `python pkb_crawler -h` :
 
 ```
@@ -40,7 +41,7 @@ hasil dari command tersebut adalah file dengan format .csv dan diletakan dalam f
 ### Level 2
 program ini menghasilkan bag of pair words dari dataframe level 1
 
-lokasi file level_2.py ada di `./pkb_crawler/level_2.py`
+lokasi file level_2.py ada di `./project_pkb/level_2.py`
 untuk men-generate dataframe level 2 gunakan command :
 ```bash
 python level_2.py --input <lokasi_csv_level_1> --output <lokasi_peletakan_csv_level_2>`
