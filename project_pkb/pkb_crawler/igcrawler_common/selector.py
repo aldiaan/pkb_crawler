@@ -1,0 +1,17 @@
+POST_LOCATION = 'div.v1Nh3.kIKUG._bz0w > a'
+POST_CREATOR = 'a.FPmhX.notranslate.nJAzx'
+POST_NEXT_BUTTON = 'a.HBoOv.coreSpriteRightPaginationArrow'
+# POST_CONTENT = 'ul.XQXOT > div.ZyFrc > li > div > div > div.C4VMK > span'
+POST_CONTENT = 'div.C4VMK > span'
+POST_LIKES = 'button.sqdOP.yWX7d._8A5w5 > span'
+POST_LIKE = 'button.sqdOP.yWX7d._8A5w5'
+POST_WATCH_COUNT = 'div.HbPOm._9Ytll > span > span'
+POST_VIDEO_LIKE = 'div.vJRqr > span'
+POST_DATE = 'time._1o9PC.Nzb55'
+
+PRIVATE_PAGE = 'h2.rkEop'
+USER_FOLLOWER = 'ul.k9GMp > li.Y8-fY > a.-nal3 > span'
+FOLLOWER_UID = 'a.FPmhX.notranslate._0imsa'
+FOLLOWER_SCROLL_DOWN = 'isgrP'
+
+LOGIN_PROMPT_CLOSE = 'button.dCJp8.afkep.xqRnw'
