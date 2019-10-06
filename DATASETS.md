@@ -7,3 +7,7 @@ data yang berhasil kami kumpulkan dengan menggunakan crawler kami selama 1 1/2 h
     2. size = 30,4 MB (30.360.120 bytes)
 2. Dataframe level 2 bag of pair words (freqs,uid,word1,word2) dalam bentuk .csv
     1. size = 11,6 MB (11.647.641 bytes)
+
+Kendala yang kami dalam proses crawling adalah sebagai berikut:
+1. Terjadi error yang tidak terduga saat pengumpulan data
+2. Di blok oleh instagram
