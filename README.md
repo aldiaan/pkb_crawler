@@ -10,6 +10,7 @@ Dibuat oleh kelompok :
 3. Install package yang dibutuhkan crawler dengan command :
     1. `pip install selenium` (scrapping)
     2. `pip install requests` (login instagram)
+    3. `pip install pandas`
 
 ## Pemakaian
 ### Level 1
