@@ -6,7 +6,7 @@ import argparse
 def normalize_post(text):
 	str(text)
 	text = text.lower()
-	# text = re.sub(r"(https://)?www.+\w+", "", text)
+	text = re.sub(r"(https://)?www.+\w+", "", text)
 	# remove chara like : ®, ©, ™
 	text = re.sub(r"[^\x00-\x7F]", " ", text)	
 	# remove hashtag
