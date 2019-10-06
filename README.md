@@ -1,7 +1,7 @@
 # PKB Crawler
 Dibuat oleh kelompok :
 1. Aldian Asmara (1313618032)
-2. Ridwan Syah
+2. Ridwan Syah (1313618016)
 ## Instalasi :
 1. Pastikan anda mempunyai browser Google Chrome
 2. Masukan chromedriver yang ada di ./pkb_crawler/drivers/windows untuk windows dan ./pkb_crawler/drivers/linux untuk linux:
