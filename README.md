@@ -32,7 +32,7 @@ list parameter yang tersedia yang dapat dilihat dengan command `python pkb_crawl
 untuk men-generate dataframe level 1 gunakan command :
 
 ```bash
-python pkb_crawler --username <username_ig_anda> --password <password_ig_anda> --uid <id_instagram_yang_ingin_dicrawl> --ring n --mode 1
+python pkb_crawler --username <username_ig_anda> --password <password_ig_anda> --uid <id_instagram_yang_ingin_dicrawl> --ring 4 --mode 1
 ```
 
 untuk melanjutkan crawling sebelumnya dapat digunakan command :
