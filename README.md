@@ -7,7 +7,8 @@ Dibuat oleh kelompok :
 2. Masukan chromedriver yang ada di ./pkb_crawler/drivers/windows untuk windows dan ./pkb_crawler/drivers/linux untuk linux:
     1. untuk linux copy chromedriver ke /usr/bin atau /usr/local/bin
     2. untuk windows copy path chromedriver.exe ke Path system variable
-3. Install package yang dibutuhkan crawler dengan command :
+3. Pastikan versi Python 3.5+
+4. Install package yang dibutuhkan crawler dengan command :
     1. `pip install selenium` (scrapping)
     2. `pip install requests` (login instagram)
     3. `pip install pandas`
