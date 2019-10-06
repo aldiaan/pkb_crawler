@@ -44,10 +44,10 @@ program ini menghasilkan bag of pair words dari dataframe level 1
 lokasi file level_2.py ada di `./project_pkb/level_2.py`
 untuk men-generate dataframe level 2 gunakan command :
 ```bash
-python level_2.py --input <lokasi_csv_level_1> --output <lokasi_peletakan_csv_level_2>`
+python level_2.py --input <lokasi_csv_level_1> --output <lokasi_peletakan_csv_level_2>
 ```
 
 contoh penggunaan command level2 :
 ```
-`python level_2.py --input K:\\pkb\\project_pkb\\pkb_crawler\\data\\05_10_2019_124135_level1_dump.csv --output K:\\pkb\\project_pkb\\pkb_crawler\\data\\05_10_2019_124135_level2_dump.csv`
+python level_2.py --input K:\\pkb\\project_pkb\\pkb_crawler\\data\\05_10_2019_124135_level1_dump.csv --output K:\\pkb\\project_pkb\\pkb_crawler\\data\\05_10_2019_124135_level2_dump.csv
 ```
