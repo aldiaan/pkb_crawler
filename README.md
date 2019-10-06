@@ -3,11 +3,11 @@
 ## Instalasi :
 1. Pastikan anda mempunyai browser Google Chrome
 2. Masukan chromedriver yang ada di ./pkb_crawler/drivers/windows untuk windows dan ./pkb_crawler/drivers/linux untuk linux:
-_1. untuk linux copy chromedriver ke /usr/bin atau /usr/local/bin
-_2. untuk windows copy path chromedriver.exe ke Path system variable
+    1. untuk linux copy chromedriver ke /usr/bin atau /usr/local/bin
+    2. untuk windows copy path chromedriver.exe ke Path system variable
 3. Install package yang dibutuhkan crawler dengan command :
-_1. `pip install selenium` (scrapping)
-_2. `pip install requests` (login instagram)
+    1. `pip install selenium` (scrapping)
+    2. `pip install requests` (login instagram)
 
 ## Pemakaian
 ### Level 1
