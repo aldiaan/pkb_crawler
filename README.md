@@ -11,19 +11,21 @@
 
 ## Pemakaian
 ### Level 1
-list parameter yang tersedia yang dapat dilihat dengan command `python pkb_crawler -h`
-    ```
-    -h, --help        show this help message and exit
-    -m , --mode       format untuk output tugas (level1), contoh : --mode 1
-    -u , --username   username untuk login instagram 
-    -p , --password   password untuk login instagram
-    --uid             instagram id user mula mula yang ingin di-crawl
-    -n , --limit      scrap n-posts dari setiap user (optional, default=Inf)
-    -r , --ring       mengambil follower sampai n-ring (default=1)
-    -c                melanjutkan dari scrapping sebelumnya (experimental)
-    ```
+list parameter yang tersedia yang dapat dilihat dengan command `python pkb_crawler -h` :
+
+```
+-h, --help        show this help message and exit
+-m , --mode       format untuk output tugas (level1), contoh : --mode 1
+-u , --username   username untuk login instagram 
+-p , --password   password untuk login instagram
+--uid             instagram id user mula mula yang ingin di-crawl
+-n , --limit      scrap n-posts dari setiap user (optional, default=Inf)
+-r , --ring       mengambil follower sampai n-ring (default=1)
+-c                melanjutkan dari scrapping sebelumnya (experimental)
+```
 
 untuk men-generate dataframe level 1 gunakan command :
+
 `python pkb_crawler --username <username_ig_anda> --password <password_ig_anda> --uid <id_instagram_yang_ingin_dicrawl> --ring n --mode 1`
 
 untuk melanjutkan crawling sebelumnya dapat digunakan command :
