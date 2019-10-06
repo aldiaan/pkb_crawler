@@ -25,7 +25,7 @@ list parameter yang tersedia yang dapat dilihat dengan command `python pkb_crawl
 -p , --password   password untuk login instagram
 --uid             instagram id user mula mula yang ingin di-crawl
 -n , --limit      scrap n-posts dari setiap user (n=[0-99], optional, default=Inf)
--r , --ring       mengambil follower sampai n-ring (default=1)
+-r , --ring       mengambil follower sampai n-ring (n=[0-99], default=1)
 -c                melanjutkan dari scrapping sebelumnya (experimental)
 ```
 
