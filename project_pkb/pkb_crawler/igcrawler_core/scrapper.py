@@ -16,6 +16,7 @@ from igcrawler_common.const import BASE_URL, FOLLOWERS_LIMIT
 from igcrawler_common.selector import *
 
 from igcrawler_core.helpers import *
+from igcrawler_core.database import Database
 
 class Scrapper:
     def __init__(self):
@@ -33,7 +34,11 @@ class Scrapper:
         self.driver.get(BASE_URL)
         self.driver.add_cookie(cookies)
 
-    def level1(self, uid, limit, ring=1, logged_in=False, _continue = False):        
+    def level1(self, uid, limit, ring=1, logged_in=False, _continue = False, savetodb=False): 
+
+        if savetodb:
+            db = Database()
+
         if limit == None:
             limit = 999999999999999
         
@@ -51,9 +56,9 @@ class Scrapper:
                 path = (os.path.dirname(os.path.realpath(__file__))).replace('/igcrawler_core', '/data/') + datetime.now().strftime("%d_%m_%Y_%H%M%S") + '_level1_' + 'dump.csv'       
             else:
                 # windows (nt)
-                path = (os.path.dirname(os.path.realpath(__file__))).replace('\\igcrawler_core', '\\data\\') + datetime.now().strftime("%d_%m_%Y_%H%M%S") + '_level1_' + 'dump.csv'       
-            print(path)
-            open(path, 'w+')
+                path = (os.path.dirname(os.path.realpath(__file__))).replace('\\igcrawler_core', '\\data\\') + datetime.now().strftime("%d_%m_%Y_%H%M%S") + '_level1_' + 'dump.csv'                
+            if not savetodb:
+                open(path, 'w+')
             uids = self.get_user_followers(uid, ring)                
             c['path'] = path
             c['uids'] = uids
@@ -67,15 +72,14 @@ class Scrapper:
                 c['path'] = path
                 uids = data['uids']
                 uids = uids[data['last_idx']:]    
-                c['uids'] = uids
-                print(path)            
+                c['uids'] = uids                
             
         try:
             datas = []
             for count_id, uid in enumerate(uids):
                 self.driver.get(BASE_URL + uid)        
                 print('user number : {}'.format(str(count_id + 1)))
-                c['last_idx'] = count_id
+                c['last_idx'] = count_id + 1
                 i = 0            
                 try:
                     self.wait_for_element(PRIVATE_PAGE, 3)
@@ -120,15 +124,24 @@ class Scrapper:
                                             except:
                                                 pass
 
+                                    if likes_watch == '1 like':
+                                        likes_watch = '1'
+                                    elif likes_watch == 'like this':
+                                        likes_watch = '0'                
+
                                     data = {
                                         'account' : uid,
                                         'content' : remove_tags(post_content),
                                         'tags' : word_tags,
                                         'likes' : likes_watch,
                                         'comment' : comment
-                                    }      
+                                    }   
 
-                                    datas.append(data)                                                            
+                                    if not savetodb:
+                                        datas.append(data)                                                            
+                                    else:
+                                        print(data)
+                                        db.lvl1.insert_one(data)
                                     print(json.dumps(data, indent=4, sort_keys=True))
 
                                 except:
@@ -148,16 +161,21 @@ class Scrapper:
                                     i = int(limit)
                     except:                                            
                         i = int(limit)
-            save_to_csv(path, datas, write_mode)    
-            print('saved to -> {} ({})'.format(path, convert_bytes((os.stat(path)).st_size)))
+            if not savetodb:
+                save_to_csv(path, datas, write_mode)    
+                print('saved to -> {} ({})'.format(path, convert_bytes((os.stat(path)).st_size)))            
         except KeyboardInterrupt:
             print('ended with keyboard interrupt')
-            save_to_csv(path, datas, write_mode)    
-            print('saved to -> {} ({})'.format(path, convert_bytes((os.stat(path)).st_size)))            
+            if not savetodb:
+                save_to_csv(path, datas, write_mode) 
+                print('saved to -> {} ({})'.format(path, convert_bytes((os.stat(path)).st_size)))                        
+    
         except:
             print('ended with error:')            
-            save_to_csv(path, datas, write_mode)    
-            print('saved to -> {} ({})'.format(path, convert_bytes((os.stat(path)).st_size)))
+            if not savetodb:
+                save_to_csv(path, datas, write_mode)    
+                print('saved to -> {} ({})'.format(path, convert_bytes((os.stat(path)).st_size)))
+            
         finally:                                        
             with open('continue.json', 'w') as fp:
                 json.dump(c, fp)            
