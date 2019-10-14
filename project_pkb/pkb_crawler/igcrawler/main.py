@@ -14,7 +14,7 @@ def start(args):
             igcrawler.add_cookies(cookie)
         logged_in = True
             
-    if args.c == '1':                        
+    if args.c:                        
         igcrawler.level1(args.uid, None, 1, logged_in=logged_in, _continue=True, savetodb=savetodb)
 
     if args.uid != None:        
