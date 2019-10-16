@@ -20,7 +20,6 @@ list parameter yang tersedia yang dapat dilihat dengan command `python pkb_crawl
 
 ```
 -h, --help        show this help message and exit
--m , --mode       format untuk output tugas (level1), contoh : --mode 1
 -u , --username   username untuk login instagram 
 -p , --password   password untuk login instagram
 --uid             instagram id user mula mula yang ingin di-crawl
@@ -32,12 +31,12 @@ list parameter yang tersedia yang dapat dilihat dengan command `python pkb_crawl
 untuk men-generate dataframe level 1 gunakan command :
 
 ```bash
-python pkb_crawler --username <username_ig_anda> --password <password_ig_anda> --uid <id_instagram_yang_ingin_dicrawl> --ring 4 --mode 1
+python pkb_crawler --username <username_ig_anda> --password <password_ig_anda> --uid <id_instagram_yang_ingin_dicrawl> --ring 4
 ```
 
 untuk melanjutkan crawling sebelumnya dapat digunakan command :
 ```bash
-python pkb_crawler --mode 1 -c
+python pkb_crawler -c
 ```
 
 hasil dari command tersebut adalah file dengan format .csv dan diletakan dalam folder `./project_pkb/pkb_crawler/data/tanggal_bulan_tahun_jam_menit_detik.csv`
