@@ -10,7 +10,7 @@ Dibuat oleh kelompok :
     2. isi `DB_HOST` di file igcrawler_config/config.py
     petunjuk penggunaan save ke db `level_2.py`
     1. tambahkan parameter --save-db
-    2. tambahkan host lewat parameter --host [ex: --host mongodb://localhost:27017/ost ] (default: localhost:27017)
+    2. tambahkan host lewat parameter --host [ex: --host mongodb://localhost:27017/] (default: localhost:27017)
 2. Random sleep
 3. menambahkan program naive bayes `naive_bayes.py`
 ## Instalasi :
