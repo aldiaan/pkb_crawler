@@ -95,7 +95,7 @@ class Scrapper:
                         while i < int(limit):                            
                             print('fetching post number {} from {} ... '.format(i + 1, uid))
                             try:
-                                self.wait_for_element(POST_DATE, 3.5)                    
+                                self.wait_for_element(POST_DATE, 10)                    
                                 post_content = ''
                                 comment = ''
 
@@ -133,7 +133,7 @@ class Scrapper:
                                         'account' : uid,
                                         'content' : remove_tags(post_content),
                                         'tags' : word_tags,
-                                        'likes' : likes_watch,
+                                        'likes' : int(likes_watch.replace(",", "")),
                                         'comment' : comment
                                     }   
 
@@ -153,7 +153,7 @@ class Scrapper:
 
                             finally:
                                 try:
-                                    sleep(random.uniform(0, 0.5))
+                                    sleep(random.uniform(0.5, 1))
                                     self.driver.find_element_by_css_selector(POST_NEXT_BUTTON).click()
                                     i += 1
                                 except:
@@ -201,10 +201,10 @@ class Scrapper:
                 except:
                     try:
                         el_followers = self.wait_for_elements(USER_FOLLOWER, 0)[0]
-                        el_followers.click()
+                        el_followers.click()                        
                     except:
                         return followers
-                    sleep(2)
+                    sleep(2.5)
                     followers_count = el_followers.get_attribute('title')
                     followers_count = followers_count.replace(',', '')
 
@@ -213,14 +213,24 @@ class Scrapper:
                         followers_count = '0'
                     if int(followers_count) > FOLLOWERS_LIMIT:
                         followers_count = FOLLOWERS_LIMIT
-
-                    while len(uids) < int(followers_count):                             
-                        self.driver.execute_script("x1 = document.querySelector('div.isgrP');x1.scrollBy(0,x1.offsetHeight - 70)")
-                        sleep(0.4)
+                    factor = 0
+                    while len(uids) < int(followers_count):
+                        old_len = len(uids)                                                     
+                        self.driver.execute_script("x1 = document.querySelector('div.isgrP');x1.scrollBy(0,x1.offsetHeight - 67)")
+                        sleep(0.64)
+                        self.driver.execute_script("x1 = document.querySelector('div.isgrP');x1.scrollBy(0,x1.offsetHeight - 84)")
+                        sleep(0.5)
+                        self.driver.execute_script("x1 = document.querySelector('div.isgrP');x1.scrollBy(0,x1.offsetHeight - 84)")
+                        sleep(0.6)                        
                         uids = self.driver.find_elements_by_css_selector(FOLLOWER_UID)
+                        if old_len == len(uids):
+                            factor += 1
                         if len(uids) < 12:
                             break
-                        
+                        if factor == 10:
+                            break
+                    
+                    print("got {} followers ... ".format(len(uids)))
                         # print(str(len(uids)) + '/' + str(followers_count))
 
                     for uid in uids:
