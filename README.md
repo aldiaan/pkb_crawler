@@ -2,6 +2,17 @@
 Dibuat oleh kelompok :
 1. Aldian Asmara (1313618032)
 2. Ridwan Syah (1313618016)
+
+## UPDATE
+1. Saving ke mongodb untuk `level_2.py` dan crawler
+    petunjuk penggunaan save ke db untuk crawler:
+    1. tambahkan parameter --save-db
+    2. isi `DB_HOST` di file igcrawler_config/config.py
+    petunjuk penggunaan save ke db `level_2.py`
+    1. tambahkan parameter --save-db
+    2. tambahkan host lewat parameter --host [ex: --host mongodb://localhost:27017/ost ] (default: localhost:27017)
+2. Random sleep
+3. menambahkan program naive bayes `naive_bayes.py`
 ## Instalasi :
 1. Pastikan anda mempunyai browser Google Chrome
 2. Masukan chromedriver yang ada di ./pkb_crawler/drivers/windows untuk windows dan ./pkb_crawler/drivers/linux untuk linux:
@@ -26,6 +37,7 @@ list parameter yang tersedia yang dapat dilihat dengan command `python pkb_crawl
 -n , --limit      scrap n-posts dari setiap user (n=[0-99], optional, default=Inf)
 -r , --ring       mengambil follower sampai n-ring (n=[0-99], default=1)
 -c                melanjutkan dari scrapping sebelumnya (experimental)
+--save-db         save hasil scrap ke mongodb (nama db: pkb, nama collections: level1)
 ```
 
 untuk men-generate dataframe level 1 gunakan command :
