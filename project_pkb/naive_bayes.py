@@ -41,7 +41,7 @@ def predict_next(word):
 
     # cari yang p(w2|w1) nya maksimum    
     top_5 = Counter(prediction_count).most_common(5)    
-    return [x[0] for x in top_5]
+    return top_5
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--data', type=str, help='letak dataset level2', metavar='')
@@ -53,9 +53,9 @@ while True:
     word1 = input("> masukan kata : ")
     word1 = word1.split()
     word1 = word1[len(word1) - 1]
-    # word2 paling kiri mempunyai kemungkinan paling besar
-    print('next word prediction :', end=" ")
+    # paling kiri mempunyai kemungkinan paling besar
+    print('next word prediction :')
     for word2 in predict_next(word1):
-        print(word2, end="  ")
+        print("    {} with score : {}".format(word2[0], word2[1]))
     print("\n")
     
