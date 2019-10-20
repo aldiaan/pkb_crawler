@@ -1,6 +1,6 @@
 # PKB Crawler
 Dibuat oleh kelompok :
-1. Aldian Asmara (1313618032)
+1. Aldian Asmara (1313618032) (contact: aldian.sc.0@gmail.com)
 2. Ridwan Syah (1313618016)
 
 ## UPDATE
