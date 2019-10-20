@@ -12,7 +12,8 @@ Dibuat oleh kelompok :
         1. tambahkan parameter --save-db
         2. tambahkan host lewat parameter --host [ex: --host mongodb://localhost:27017/] (default: localhost:27017)
 2. Random sleep
-3. menambahkan program naive bayes `naive_bayes.py`
+4. Mencari user dengan likes terbanyak dari network
+3. Menambahkan program naive bayes `naive_bayes.py`
 ## Instalasi :
 1. Pastikan anda mempunyai browser Google Chrome
 2. Masukan chromedriver yang ada di ./pkb_crawler/drivers/windows untuk windows dan ./pkb_crawler/drivers/linux untuk linux:
