@@ -23,6 +23,7 @@ Dibuat oleh kelompok :
     1. `pip install selenium` (scrapping)
     2. `pip install requests` (login instagram)
     3. `pip install pandas`
+    4. `pip install pymongo` (mongodb python)
 
 ## Pemakaian
 ### Level 1
