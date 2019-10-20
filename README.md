@@ -13,6 +13,10 @@ Dibuat oleh kelompok :
         2. tambahkan host lewat parameter --host [ex: --host mongodb://localhost:27017/] (default: localhost:27017)
 2. Random sleep
 3. Mencari user dengan likes terbanyak dari network
+    - petunjuk penggunaan
+        ```bash
+        python most_likes_in_network.py -d <LETAK_FILE_CSV>
+        ```
 4. Menambahkan program naive bayes `naive_bayes.py`
     - petunjuk penggunaan
         ```bash
