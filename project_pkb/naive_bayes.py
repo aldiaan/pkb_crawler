@@ -30,7 +30,6 @@ def predict_next(word):
     for key in prediction_count:
         prediction_count[key] /= total_freqs
 
-   # p(w2) * p(w1|w2) akan selalu bernilai satu
     for key in prediction_count:
         x = 0
         for b in next_word_list:            
